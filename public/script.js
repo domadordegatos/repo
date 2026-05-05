@@ -1,6 +1,4 @@
 const estado = document.getElementById('estado');
-const btnProbar = document.getElementById('btnProbar');
-const btnCargar = document.getElementById('btnCargar');
 const tbody = document.querySelector('#tablaInasistencias tbody');
 
 function setEstado(mensaje, esError = false) {
@@ -44,23 +42,6 @@ function renderTabla(rows) {
   setEstado(`Se cargaron ${rows.length} registros.`);
 }
 
-async function probarConexion() {
-  setEstado('Probando conexión con TiDB...');
-
-  try {
-    const response = await fetch('/api/health-db');
-    const payload = await response.json();
-
-    if (!response.ok || !payload.success) {
-      throw new Error(payload.message || 'Error al consultar /api/health-db');
-    }
-
-    setEstado(`Conexión correcta. Respuesta SELECT 1: ${payload.data.ok}`);
-  } catch (error) {
-    setEstado(`Error de conexión: ${error.message}`, true);
-  }
-}
-
 async function cargarInasistencias() {
   setEstado('Consultando registros de inasistencia...');
 
@@ -79,5 +60,5 @@ async function cargarInasistencias() {
   }
 }
 
-btnProbar.addEventListener('click', probarConexion);
-btnCargar.addEventListener('click', cargarInasistencias);
+// ── Al cargar la pagina: traer datos de la BD
+document.addEventListener('DOMContentLoaded', cargarInasistencias);
