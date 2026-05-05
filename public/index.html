@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inasistencias | Demo TiDB</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Registro de inasistencias</h1>
+      <p class="subtitle">Demo con Express + TiDB (mysql2)</p>
+
+      <section class="actions">
+        <button id="btnProbar">Probar conexión (SELECT 1)</button>
+        <button id="btnCargar">Cargar inasistencias</button>
+      </section>
+
+      <p id="estado" class="estado">Listo para iniciar pruebas...</p>
+
+      <section class="table-wrap">
+        <table id="tablaInasistencias">
+          <thead>
+            <tr>
+              <th>id_estudiante</th>
+              <th>nombre_estudiante</th>
+              <th>grado</th>
+              <th>fecha</th>
+              <th>asunto</th>
+              <th>acudiente</th>
+              <th>celular</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

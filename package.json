@@ -1,0 +1,24 @@
+{
+  "name": "tidb-inasistencias-demo",
+  "version": "1.0.0",
+  "description": "Proyecto base para conectar Express con TiDB y mostrar datos en una tabla",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "setup": "npm install",
+    "codespace:start": "bash ./scripts/codespace-start.sh"
+  },
+  "keywords": [
+    "express",
+    "mysql2",
+    "tidb",
+    "codespaces"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mysql2": "^3.11.3"
+  }
+}
